@@ -18,24 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWy-pY-1A2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="500"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="hee-kR-cSA"/>
+                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OE3-yH-OFU">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="gbW-yL-VWz"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yWy-pY-1A2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H8s-lD-ITm"/>
-                            <constraint firstItem="yWy-pY-1A2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TP9-V6-Z3b"/>
-                            <constraint firstItem="yWy-pY-1A2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c7o-wx-OLV"/>
-                            <constraint firstItem="yWy-pY-1A2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qLO-gd-5fO"/>
+                            <constraint firstItem="yWy-pY-1A2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8d1-lV-ga5"/>
+                            <constraint firstItem="yWy-pY-1A2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wh2-yu-hWa"/>
+                            <constraint firstItem="OE3-yH-OFU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bq6-XT-tRo"/>
+                            <constraint firstItem="yWy-pY-1A2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c7X-g1-83r"/>
+                            <constraint firstItem="OE3-yH-OFU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jqO-yu-UcW"/>
+                            <constraint firstItem="OE3-yH-OFU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qHk-x6-Ckj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="OE3-yH-OFU" id="fAr-Rg-Swm"/>
                         <outlet property="webView" destination="yWy-pY-1A2" id="tEE-1L-GN4"/>
                     </connections>
                 </viewController>
