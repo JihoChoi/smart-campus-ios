@@ -10,16 +10,19 @@
  
  Swift Tutorials
     - Simple Web View
+        https://youtu.be/xQmZSKxOYvs
         https://youtu.be/C0Z6tJdeQ_E
     - Access Contacts
         https://youtu.be/83U9SxibsFk
  */
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var webView: UIWebView!
+    // @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +30,15 @@ class ViewController: UIViewController {
         
         // let url = URL(string: "https://www.google.com")
         // let url = URL(string: "http://popeye.snu.ac.kr")
-        
-        // Temporal web page for the smart campus project
-        let url = URL(string: "http://147.46.242.235")
-        
-        webView.loadRequest(URLRequest(url: url!))
+        // let url = URL(string: "http://147.46.242.235") // Temporal web page for the smart campus project
+        // webView.loadRequest(URLRequest(url: url!))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let url:URL = URL(string: "http://147.46.242.235")!
+        let urlRequest:URLRequest = URLRequest(url: url)
+        webView.load(urlRequest)
     }
 
 
